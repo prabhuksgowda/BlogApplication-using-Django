@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Create Post {% endblock title %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+        <div class= "container w-50" style="padding:50px 0px;">
+            <form method="post" class="form-group">{% csrf_token %}
+                <h1 class="text-center  text-primary"> <i class="fa fa-newspaper-o" aria-hidden="true"></i> ADD Post  </h1>
+                <div class="form-group" enctype="multipart/form-data">
+                    {{form.media}}
+                    {{form|crispy}}
+                </div>
+                <button href="{% url 'index' %}" type="submit" class="btn   btn-primary "> Submit <i class="fa fa-hand-o-right" aria-hidden="true"></i>  </button>
+            </form><br><br>
+        </div>
+{% else %}
+<h2>You're not allowed here! (and you know it...)</h2>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block title %}Register {% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container" style="padding-top: 50px;">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow  mb-5 bg-white rounded">
+                <div class="card-body ">
+                    <div class="container" >
+                        <h2 class="text-center">Regiater Form</h2>
+                        <form method="POST"> {% csrf_token %}
+                            <div style="padding:0px 200px">
+                                <div class="row" >
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                        <label for="">UserName</label>
+                                        <span class="asteriskField">*</span> 
+                                            <div class=""> 
+                                            <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control" required id="id_username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                        <label for="">Email</label>
+                                        <span class="asteriskField">*</span> 
+                                            <div class=""> 
+                                            <input type="email" name="email" class="emailinput form-control" required id="id_email">
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                        
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="">First Name</label>
+                                            <span class="asteriskField">*</span> 
+                                                <div class=""> 
+                                                <input type="text" name="first_name" maxlength="100" class="textinput textInput form-control" required id="id_first_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                            <label for="">Last Name</label>
+                                            <span class="asteriskField">*</span> 
+                                                <div class=""> 
+                                                    <input type="text" name="last_name" maxlength="100" class="textinput textInput form-control" required id="id_last_name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                        
+                                <div class="row" style="padding:0px 200px">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="">Password</label>
+                                            <span class="asteriskField">*</span> 
+                                                <div class=""> 
+                                                    <input type="password" name="password1" class="textinput textInput form-control" required id="id_password1">
+                                                    <small id="hint_id_password1" class="form-text text-muted">
+                                                        <ul>
+                                                            <li>Your password can&#39;t be too similar to your other personal information.</li>
+                                                            <li>Your password must contain at least 8 characters.</li>
+                        
+                                                        </ul>
+                                                    </small> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="form-group">
+                                            <label for="">Password confirmation</label>
+                                            <span class="asteriskField">*</span> 
+                                                <div class=""> 
+                                                    <input type="password" name="password2" class="textinput textInput form-control" required id="id_password2">
+                                                    <small id="hint_id_password1" class="form-text text-muted">
+                                                        <ul>
+                                                            <li>Your password can&#39;t be a commonly used password.</li>
+                                                            <li>Your password can&#39;t be entirely numeric.</li>
+                                                        </ul>
+                                                    </small> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" name="" id="" class="btn btn-primary" btn-lg btn-block">Register</button>
+                                </div>
+                            </div>
+                        </form> 
+                    <div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+

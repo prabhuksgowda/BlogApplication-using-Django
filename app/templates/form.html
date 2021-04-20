@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Title</title>
+</head>
+<body>
+
+
+
+<div class="container" >
+    <form method="POST">
+    <div style="padding:0px 200px">
+        <div class="row" >
+            <div class="col-6">
+                <div class="form-group">
+                  <label for="">UserName</label>
+                  <span class="asteriskField">*</span> 
+                    <div class=""> 
+                    <input type="text" name="username" maxlength="150" autofocus class="textinput textInput form-control" required id="id_username">
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                  <label for="">Email</label>
+                  <span class="asteriskField">*</span> 
+                    <div class=""> 
+                     <input type="email" name="email" class="emailinput form-control" required id="id_email">
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">First Name</label>
+                    <span class="asteriskField">*</span> 
+                        <div class=""> 
+                        <input type="text" name="first_name" maxlength="100" class="textinput textInput form-control" required id="id_first_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                    <label for="">Last Name</label>
+                    <span class="asteriskField">*</span> 
+                        <div class=""> 
+                            <input type="text" name="last_name" maxlength="100" class="textinput textInput form-control" required id="id_last_name">
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="row" style="padding:0px 200px">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <span class="asteriskField">*</span> 
+                        <div class=""> 
+                            <input type="password" name="password1" class="textinput textInput form-control" required id="id_password1">
+                            <small id="hint_id_password1" class="form-text text-muted">
+                                <ul>
+                                    <li>Your password can&#39;t be too similar to your other personal information.</li>
+                                    <li>Your password must contain at least 8 characters.</li>
+
+                                </ul>
+                            </small> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                    <label for="">Password confirmation</label>
+                    <span class="asteriskField">*</span> 
+                        <div class=""> 
+                            <input type="password" name="password2" class="textinput textInput form-control" required id="id_password2">
+                            <small id="hint_id_password1" class="form-text text-muted">
+                                <ul>
+                                    <li>Your password can&#39;t be a commonly used password.</li>
+                                    <li>Your password can&#39;t be entirely numeric.</li>
+                                </ul>
+                            </small> 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    </form> 
+<div>
+
+
+
+
+
+
+    <div class="container" style="padding-top: 50px;">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow  mb-5 bg-white rounded">
+                    <div class="card-body ">
+                        <div class="container w-50">
+                            <form method="post" class="form-group">
+                                <h1 class="text-center  text-primary" style="padding-top: 20px;"> <i class="fa fa-exchange" aria-hidden="true"></i> Change Password  </h1>
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <label>Old password
+                                        <span class="asteriskField">*</span>
+                                    </label> <div class="">
+                                     <input type="text" name="old_password" maxlength="100" class="textinput textInput form-control" required id="id_old_password">
+                                </div>
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <label>   
+                                    New password1
+                                    <span class="asteriskField">*</span>
+                                 </label>
+                                  <input type="text" name="new_password1" maxlength="100" class="textinput textInput form-control" required id="id_new_password1">
+                                </div>
+                                <div class="form-group" >
+                                    <label>New password2
+                                          <span class="asteriskField">*</span>
+                                    </label>  
+                                    <input type="text" name="new_password2" maxlength="100" class="textinput textInput form-control" required id="id_new_password2"> 
+                                    <small id="hint_id_password1" class="form-text text-muted">
+                                        <ul>
+                                            <li>Your password can&#39;t be a commonly used password.</li>
+                                            <li>Your password can&#39;t be entirely numeric.</li>
+                                            <li>Your password can&#39;t be too similar to your other personal information.</li>
+                                            <li>Your password must contain at least 8 characters.</li>
+        
+                                        </ul>
+                                    </small>
+                                </div>
+                                <div class="text-center">
+                                    <button href="" type="submit" class="btn  btn-primary">  Change <i class="fas fa-sign-in-alt    "></i> </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+    <div class="container" style="padding-top: 50px;">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow  mb-5 bg-white rounded">
+                    <div class="card-body ">
+                        <div class="container w-50">
+                            <form method="post" class="form-group">
+                                <h1 class="text-center  text-primary" style="padding-top: 20px;"> <i class="fa fa-user-circle-o " aria-hidden="true"></i> </h1>
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <label>User Name
+                                        <span class="asteriskField">*</span>
+                                    </label> 
+                                    <input type="text" name="username" autofocus class="textinput textInput form-control" required id="id_username"> 
+                                </div>
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <label> Password
+                                    <span class="asteriskField">*</span>
+                                 </label>
+                                 <input type="password" name="password" class="textinput textInput form-control" required id="id_password">
+                                </div>
+                
+                                <div class="text-center">
+                                    <button href="" type="submit" class="btn  btn-primary">  Login <i class="fas fa-sign-in-alt    "></i> </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+
+
+    <div class="container" style="padding: 50px 150px;">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow  mb-5 bg-white rounded">
+                    <div class="card-body ">
+                        <form method="post" class="form-group">{% csrf_token %}
+                            <h1 class="text-center  text-primary"> <i class="fas fa-graduation-cap    "></i> Delete : {{post.title}}</h1>
+                            <strong>Are you sure? </strong><br>
+                        <small> <button href="#" type="submit" class="btn  btn-primary"> <i class="fas fa-hand-point-up    "></i> Delete</button></small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+

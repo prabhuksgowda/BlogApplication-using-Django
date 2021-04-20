@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{post.title_tag}} {% endblock title %}
+
+{% block content %}
+ 
+
+<div class="container">
+    <div class="row">
+        <div class="col-8" style="padding-top:50px; padding-right:30px">
+            <div class="card shadow  mb-5 bg-white rounded" >
+                <div class="card-body ">
+                    <h1 class="text-capitalize text-center"> {{post.title}} </h1>
+                    <h6 class="text-capitalize">{{post.author}} | <a class="text-muted" href="{% url 'category' post.category %} ">{{post.category}}</a> </h6>
+                    <small>{{post.date}}</small><hr>
+                    {{post.content|safe}}<br>
+                        <a name="" id="" class="btn btn-sm btn-outline-info" href="{% url 'index' %}" role="button">back</a>
+
+                    {% if user.is_authenticated %}                       
+                        {% if user.id == post.author.id %}
+                        <a name="" id="" class="btn btn-sm btn-outline-primary " href="{% url 'editpost' post.pk %}" role="button">Edit</a> <span>   </span>
+                        <a name="" id="" class="btn btn-sm btn-outline-danger left" href="{% url 'deletepost' post.pk %}" role="button">Delete</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-4" style="padding-top:50px">
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow  mb-5 bg-white rounded" >
+                        <div class="card-body ">
+                            <h3 class="text-capitalize text-center"> Author Details </h3><hr>
+                            <img src="{{ post.author.profile.profile_pick.url}}" width="50px" height="50px" class="rounded-circle" >
+                            <span class="text-capitalize" style="padding-left:5px ">{{post.author.first_name}}
+                            {{post.author.last_name}}</span><br><br>
+                            {{post.author.profile.bio}}<br><br>
+                            <h5 class="border-bottom">Contact Details</h5>
+                            Email : {{post.author.email}}
+                            <div style="font-size: 2rem;" >
+                                <a href="#"> <i class="fa fa-facebook-official " aria-hidden="true" fa-lg ></i></a> 
+                                <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a> 
+                                <a href="#"> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+                                <a href="#"> <i class="fa fa-globe" aria-hidden="true"></i> </a> 
+
+                                {% comment %} {{post.author.profile.fb_url}} {% endcomment %}
+                            </div><br>
+                            <h6 class="text-capitalize">{{post.author}} | <a class="text-muted" href="{% url 'category' post.category %} ">{{post.category}}</a> </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow  mb-5 bg-white rounded" >
+                        <div class="card-body ">
+                            <h3 class="text-capitalize text-center"> Category  </h3><hr>
+                            <p>Click here to read more Blog about Sport Category</p>
+                            <h3 class="text-uppercase text-center cat"> <a href="{% url 'category' post.category %} ">{{post.category}}</a> </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock content %}
+
+    
+

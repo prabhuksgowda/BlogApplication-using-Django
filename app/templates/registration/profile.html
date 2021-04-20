@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Profile {% endblock title %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h1> Profile </h1>
+<div class="col-sm-2 text-white my-5 text-center">
+    <h4 class="my-5">Profile</h4>
+    <h5 class="fn">{{full_name}}</h5>
+    {% for group in groups %}
+        <p>{{group.name}}</p>
+    {% endfor %}
+</div>
+{% endblock  %}

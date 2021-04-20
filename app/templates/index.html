@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+<section>
+<div class="container" style="padding-top: 50px;">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow  mb-5 bg-white rounded">
+                <div class="card-body ">
+                    <div class="text-center">
+                        <h3>Well Come</h3>
+                        <h4>To</h4>
+                        <h1>My <span style="color:green">Blog</span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+
+</section>
+
+<section class="post">
+<div class="container">
+    <div class="row">
+        {% for post in object_list %}
+        <div class="col-4">
+            <div class="card shadow  mb-5 bg-white rounded" style="height: 20rem;">
+                <div class="card-body ">
+                    <img src="{{post.banner_image.url}}" class=" thumbnail img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                    <h4 class="text-capitalize"> <a  href="{% url 'post_detail' post.pk %}"> {{post.title}} </a></strong> </h2>
+                    <h6 class="text-capitalize">{{post.author}} | <a class="text-muted" href="{% url 'category' post.category %} ">{{post.category}}</a> </h6>
+                    <small>{{post.date}}</small><hr>
+                    {{post.content|slice:"100" |safe}}<br><br>
+                        <a name="" id="" class="btn btn-sm btn-outline-primary" href="{% url 'post_detail' post.pk %}" role="button"> Read More ...</a>
+                    {% if user.is_authenticated %}
+                        {% if user.id == post.author.id %}
+                        <a name="" id="" class="btn btn-sm btn-outline-primary" href="{% url 'editpost' post.pk %}" role="button">Edit</a>
+                        <a name="" id="" class="btn btn-sm btn-outline-primary left" href="{% url 'deletepost' post.pk %}" role="button">Delete</a>
+                        {% endif %}
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+</section>
+
+
+{% endblock content %}

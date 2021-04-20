@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Edit Post {% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+
+        <div class="container w-50">
+            <form method="post" class="form-group">{% csrf_token %}
+                <h1 class="text-center  text-primary"> <i class="fas fa-graduation-cap    "></i> Update Post  </h1>
+                <div class="form-group" >
+                    {{form.media}}
+                    {{form|crispy}}
+                </div>
+            <small> <button href="#" type="submit" class="btn  btn-primary"> <i class="fas fa-hand-point-up    "></i> Update</button></small>
+            </form>
+        </div>
+    {% else %}
+    you're not allowed here!(and you know it....)
+    {% endif %}
+{% else %}
+<h2>You're not allowed here! (and you know it...)</h2>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Delete Post {% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+    <div class="container" style="padding: 50px 150px;">
+        <div class="row">
+            <div class="col">
+                <div class="card shadow  mb-5 bg-white rounded">
+                    <div class="card-body ">
+                        <form method="post" class="form-group">{% csrf_token %}
+                            <div class="text-center">
+                                <h1 class="text-center  text-primary"> Delete : {{post.title}}</h1>
+                                <h2><strong>Are you sure? </strong></h2><small>Think Once Again...... </small>
+                                <br><br>
+                    
+                                <button href="#" type="submit" class="btn  btn-danger"> <i class="fas fa-hand-point-up    "></i> Delete</button>
+                             </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% else %}
+        you're not allowed here!(and you know it....)
+    {% endif %}
+
+{% else %}
+<h2>You're not allowed here! (and you know it...)</h2>
+{% endif %}
+{% endblock %}

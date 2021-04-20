@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Register {% endblock title %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+
+    <div class="container" style="padding: 50px 200px;">
+        <div class="row" style="padding:20px 60px">
+            <div class="col">
+                <div class="card shadow  mb-5 bg-white rounded">
+                    <div class="card-body ">
+                        <form method="post" class="form-group">{% csrf_token %}
+                            <h1 class="text-center  text-primary">  Edit  Profile  </h1><br>
+                            <div class="form-group">
+                                {{form|crispy}}
+                            </div>
+                            <div class="text-center">
+                                <button href="" type="submit" class="btn  btn-primary">  Update Profile <i class="fas fa-sign-in-alt    "></i> </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
